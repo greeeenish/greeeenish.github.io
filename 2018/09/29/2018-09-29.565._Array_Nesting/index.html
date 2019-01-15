@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="A zero-indexed array A of length N contains all integers from 0 to N-1.  Find and return the longest length of set S, where S[i] = {A[i], A[A[i]], A[A[A[i]]], … }  subjected to the rule below.  Suppos">
+<meta name="keywords" content="数组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="565. Array Nesting">
+<meta property="og:url" content="http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/index.html">
+<meta property="og:site_name" content="Greenish">
+<meta property="og:description" content="A zero-indexed array A of length N contains all integers from 0 to N-1.  Find and return the longest length of set S, where S[i] = {A[i], A[A[i]], A[A[A[i]]], … }  subjected to the rule below.  Suppos">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-15T07:31:43.838Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="565. Array Nesting">
+<meta name="twitter:description" content="A zero-indexed array A of length N contains all integers from 0 to N-1.  Find and return the longest length of set S, where S[i] = {A[i], A[A[i]], A[A[A[i]]], … }  subjected to the rule below.  Suppos">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>565. Array Nesting</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/10/09/2018-10-09.338._Counting_Bits/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/09/27/2018-09-27.78._Subsets/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&text=565. Array Nesting"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&is_video=false&description=565. Array Nesting"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=565. Array Nesting&body=Check out this article: http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&name=565. Array Nesting&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        565. Array Nesting
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Greenish</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-09-29T01:37:40.000Z" itemprop="datePublished">2018-09-29</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/算法/">算法</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/数组/">数组</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <pre><code>A zero-indexed array A of length N contains all integers from 0 to N-1. 
+Find and return the longest length of set S, where S[i] = {A[i], A[A[i]], A[A[A[i]]], … } 
+subjected to the rule below.
+
+Suppose the first element in S starts with the selection of element A[i] of index = i, 
+the next element in S should be A[A[i]], and then A[A[A[i]]]… By that analogy, 
+we stop adding right before a duplicate element occurs in S.
+
+Input: A = [5,4,0,3,1,6,2]
+Output: 4
+Explanation: 
+A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.
+
+One of the longest S[K]:
+S[0] = {A[0], A[5], A[6], A[2]} = {5, 6, 2, 0}
+</code></pre><p>题目的思路很简单，循环数组，对数组的每一项进行dfs，找到最大值。<br>一开始我用递归写的，最后一个测试用例总是超时，后来换成了迭代，还是超时。搜了一下别人的答案，发现我的算法里面用了一个数组来存储每次dfs的结果，判断结束的条件是现在进行dfs的数字是否已经在这个数组里面。这样做会进行很多次重复的迭代，时间复杂度是 O(n^2)<br>改成用一个数组来存储是否进行过dfs的状态标记，这样就不会重复进行dfs，时间复杂度是 O(n)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrayNesting = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> result = []</span><br><span class="line">        <span class="keyword">var</span> max = <span class="number">0</span></span><br><span class="line">        <span class="keyword">var</span> inputlen = nums.length</span><br><span class="line">        <span class="keyword">var</span> nest = <span class="function"><span class="keyword">function</span> (<span class="params">a,len,s</span>) </span>&#123;</span><br><span class="line">            <span class="comment">//递归会超时</span></span><br><span class="line">            <span class="comment">// var temp = nums[a]</span></span><br><span class="line">            <span class="comment">// if(s.indexOf(temp)!=-1)&#123;</span></span><br><span class="line">            <span class="comment">//     return len</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">            <span class="comment">// s.push(temp)</span></span><br><span class="line">            <span class="comment">// return nest(temp,len+1,s)</span></span><br><span class="line"> </span><br><span class="line">            <span class="comment">//迭代更快</span></span><br><span class="line">            <span class="keyword">while</span> (!s[a])&#123;</span><br><span class="line">                s[a] = <span class="number">1</span></span><br><span class="line">                <span class="comment">// s.push(a)</span></span><br><span class="line">                a = nums[a]</span><br><span class="line">                len++</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> len</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;inputlen;i++)&#123;</span><br><span class="line">            <span class="keyword">var</span> flag = <span class="keyword">new</span> <span class="built_in">Array</span>(inputlen)</span><br><span class="line">            flag.fill(<span class="number">0</span>)</span><br><span class="line">            result[i] = nest(nums[i],<span class="number">0</span>,flag)</span><br><span class="line">            max = result[i]&gt;max ? result[i] : max</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>以后写算法的时候，要多注意一下时间复杂度和空间复杂度，尽可能地进行优化。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&text=565. Array Nesting"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&is_video=false&description=565. Array Nesting"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=565. Array Nesting&body=Check out this article: http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&title=565. Array Nesting"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/09/29/2018-09-29.565._Array_Nesting/&name=565. Array Nesting&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Greensih
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
