@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Greenish">
 <meta property="og:description" content="使用libvirt进行基于共享存储的动态迁移。好像kvm-qemu的版本高一点都不需要配置共享存储。 一共需要三台主机:  两个基于kvm的客户虚拟机  一个NFS服务器，也可以用iSCSI，但是我觉得NFS简单一点   遇到的问题：  创建虚拟机时Failed to connect socket to ‘/var/run/libvirt/libvirt-sock’: No such file o">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-15T07:21:38.666Z">
+<meta property="og:updated_time" content="2019-01-15T08:59:31.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KVM在线迁移">
 <meta name="twitter:description" content="使用libvirt进行基于共享存储的动态迁移。好像kvm-qemu的版本高一点都不需要配置共享存储。 一共需要三台主机:  两个基于kvm的客户虚拟机  一个NFS服务器，也可以用iSCSI，但是我觉得NFS简单一点   遇到的问题：  创建虚拟机时Failed to connect socket to ‘/var/run/libvirt/libvirt-sock’: No such file o">
@@ -152,10 +152,9 @@
 </ul>
 <p>遇到的问题：</p>
 <ol>
-<li><strong>创建虚拟机时Failed to connect socket to ‘/var/run/libvirt/libvirt-sock’: No such file or directory</strong>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#解决方法:</span></span><br><span class="line">virsh <span class="string">'net-list '</span></span><br><span class="line">service libvirtd restart</span><br><span class="line">/etc/init.d/libvirt restart</span><br></pre></td></tr></table></figure>
+<li><p><strong>创建虚拟机时Failed to connect socket to ‘/var/run/libvirt/libvirt-sock’: No such file or directory</strong> </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#解决方法:</span></span><br><span class="line">virsh <span class="string">'net-list '</span></span><br><span class="line">service libvirtd restart</span><br><span class="line">/etc/init.d/libvirt restart</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
 <li><p><strong>挂载NFS的时候，要挂载到虚拟机镜像的路径。NFS服务器要关闭防火墙</strong>  </p>
 </li>
 <li><p><strong>迁移的时候遇到错误error: internal error hostname on destination resolved to localhost, but migration requires an FQDN</strong> </p>
