@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Greenish">
 <meta property="og:description" content="投了简历的第二天就接到了面试电话，准备得不太充分，第一次面试也比较紧张，面试的效果不太理想。总体来说对于实习生的面试问题比较基础，很多问题是有印象的或者知道却没说清楚，还是面试的经验太少了，也不会组织语言。大概的流程就是先问了一下项目，然后问了js的一些基础，主要都是根据简历上面写的内容来问的。对之后面试还是要充分准备了再投简历，可以先投一些小厂积累一下经验。 项目vue的插件用过哪些？vue r">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-10T11:16:33.937Z">
+<meta property="og:updated_time" content="2019-03-10T12:44:29.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="腾讯实习面试总结（一）">
 <meta name="twitter:description" content="投了简历的第二天就接到了面试电话，准备得不太充分，第一次面试也比较紧张，面试的效果不太理想。总体来说对于实习生的面试问题比较基础，很多问题是有印象的或者知道却没说清楚，还是面试的经验太少了，也不会组织语言。大概的流程就是先问了一下项目，然后问了js的一些基础，主要都是根据简历上面写的内容来问的。对之后面试还是要充分准备了再投简历，可以先投一些小厂积累一下经验。 项目vue的插件用过哪些？vue r">
@@ -231,6 +231,7 @@
 <h4 id="4-window-name-ifame"><a href="#4-window-name-ifame" class="headerlink" title="4.window.name+ifame"></a>4.window.name+ifame</h4><p>利用window.name属性。name值在不同域名的页面加载后依然存在，并可以支持较长的name值（2MB）</p>
 <p>通过 iframe 的 src 属性由外域转向本地域，跨域数据即由 iframe 的 window.name 从外域传递到本地域。这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作。</p>
 <h4 id="5-postMessage"><a href="#5-postMessage" class="headerlink" title="5.postMessage"></a>5.postMessage</h4><p>postMessage 是 HTML5 XMLHttpRequest Level 2 中的 API，且是为数不多可以跨域操作的 window 属性之一。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iframe.contentWindow.postMessage()</span><br></pre></td></tr></table></figure>
 <h4 id="6-CORS跨域资源共享"><a href="#6-CORS跨域资源共享" class="headerlink" title="6.CORS跨域资源共享"></a>6.CORS跨域资源共享</h4><p>CORS 是W3C 推荐的一种新的官方方案，能使服务器支持 XMLHttpRequest 的跨域请求。只需要<strong>在服务器端设置Access-Control-Allow-Origin</strong>就可以开启，该属性表示哪些域名可以访问资源。</p>
 <p>目前所有浏览器都支持该功能（IE 8 和 9 需要通过 XDomainRequest 来实现）</p>
 <p>值得注意的是，通常使用CORS时，异步请求会被分为简单请求和非简单请求，非简单请求的区别是会先发一次预检请求。</p>
